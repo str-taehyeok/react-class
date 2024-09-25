@@ -1,21 +1,20 @@
 import React from 'react'
-// import UserContainer from './day02/map/basic/normal/UserContainer';
-// import Name from './day02/map/basic/ref/basic/Name';
-// import Check from './day02/map/basic/ref/basic/Check';
-// import FoodContainer from './day02/ref/expert/FoodContainer';
-import Checkbox from './day02/ref/expert/Checkbox';
-// import FoodContainer from './day02/map/basic/FoodContainer';
-// import Container from './day01/props/Container';
-// import Count from './day01/state/Count';
-// import Sound from './day01/state/Sound';
-// import Name from './day01/state/Name';
-// import Color from './day01/state/Color';
+// import Home from './pages/home/Home';
+// import HomeInput from './pages/home/HomeInput';
+// import HomeForm from './pages/home/HomeForm';
+import GlobalStyle from './global/global';
+import { ThemeProvider } from 'styled-components';
+import theme from './global/theme';
+import HomeIcon from './pages/home/HomeIcon';
 
 function App() {
   return (
-   <>
-    <Checkbox />
-   </>
+    <>
+      <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <HomeIcon />
+      </ThemeProvider>
+    </>
   );
 }
 // 모든 태그는 함수로 선언한다. 돔은 하나로 리턴한다.
