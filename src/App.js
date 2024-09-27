@@ -7,17 +7,21 @@ import React from 'react'
 // import CharContainer from './docs/day04/context/basic/CharContainer';
 // import ParentContainer from './docs/day04/context/normal/ParentContainer';
 // import ParentContainer from './docs/day04/context/basic/ParentContainer';
+// import AnimalsContainer from './docs/day04/context/expert/AnimalsContainer';
+// import CountContainer from './docs/day05/redux/count/CountContainer';
+// import FontContainer from './docs/day05/redux/font/FontContainer';
+// import Counter from './docs/day05/zustand/store/Counter';
 import GlobalStyle from './global/global';
 import { ThemeProvider } from 'styled-components';
 import theme from './global/theme';
-import AnimalsContainer from './docs/day04/context/expert/AnimalsContainer';
+import Form from './docs/day05/form/Form';
 
 function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <AnimalsContainer />
+        <Form/>
       </ThemeProvider>
     </>
   );

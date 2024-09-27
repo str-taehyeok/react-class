@@ -4,10 +4,23 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// 리덕스 코드 추가
+import { Provider } from 'react-redux';
+import { legacy_createStore as createStore } from 'redux';
+import { devToolsEnhancer } from '@redux-devtools/extension'
+import count from './modules/count';
+import font from './modules/font';
+import rootReducer from './modules';
+
+// 스토어 생성
+const store = createStore(rootReducer, devToolsEnhancer())
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </>
 );
 
