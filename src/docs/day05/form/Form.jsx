@@ -20,22 +20,56 @@ const Form = () => {
       // REST API
       // CRUD(Read), get 요청
       // Create, post 요청
-      await fetch("http://localhost:4000/user", {
-        method : 'POST',
-        headers : {
-          'content-Type' : "application/json"
-        },
-        body : JSON.stringify({
-          id : 2,
-          email : data.email,
-          password : data.password,
-        })
-      })
-      .then((response)=>response.json())
-      .then(console.log)
-      .catch(console.error)
+      // await fetch("http://localhost:4000/user", {
+      //   method : 'POST',
+      //   headers : {
+      //     'content-Type' : "application/json"
+      //   },
+      //   body : JSON.stringify({
+      //     id : 2,
+      //     email : data.email,
+      //     password : data.password,
+      //   })
+      // })
+      // .then((response)=>response.json())
+      // .then(console.log)
+      // .catch(console.error)
 
+      // DELETE
+      // http://localhost:4000/user/2
 
+      // if(window.confirm('정말 회원탈퇴 하시겠습니까?')){
+      //   await fetch("http://localhost:4000/user/2", {
+      //       method : 'DELETE',
+      //       headers : {
+      //         'content-Type' : "application/json"
+      //       },
+      //       body : JSON.stringify({
+      //         ...data
+      //       })
+      //     })
+      //     .then((response) => {
+      //       if(!response.ok){return console.log(`Error ${response}`)}
+      //       console.log("회원탈퇴가 완료되었습니다.")
+      //     })
+      //   }
+        
+        // UPDATE
+        await fetch("http://localhost:4000/user/1", {
+            method : 'PUT',
+            headers : {
+              'content-Type' : "application/json"
+            },
+            body : JSON.stringify({
+              id : 1,
+              email : data.email,
+              password : data.password,
+            })
+          })
+          .then((response)=>response.json())
+          .then(console.log)
+          .catch(console.error)
+        
 
     })}>
       <label>
@@ -48,6 +82,7 @@ const Form = () => {
             }
           })}
         />
+
       {errors && errors?.email?.type==="required" && (
         <p>이메일을 입력하세요</p>
       )}

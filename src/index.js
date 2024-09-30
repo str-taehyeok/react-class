@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// 라우터 코드 추가
+import { BrowserRouter } from 'react-router-dom'
 
 // 리덕스 코드 추가
 import { Provider } from 'react-redux';
@@ -11,7 +13,7 @@ import { devToolsEnhancer } from '@redux-devtools/extension'
 import count from './modules/count';
 import font from './modules/font';
 import rootReducer from './modules';
-
+ 
 // 스토어 생성
 const store = createStore(rootReducer, devToolsEnhancer())
 
@@ -19,7 +21,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
     <Provider store={store}>
-      <App />
+        <App />
     </Provider>
   </>
 );
